@@ -1,0 +1,23 @@
+name: Auto Update MD File
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour on the hour
+
+jobs:
+  update_md_file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+
+      - name: Update MD file
+        run: |
+          # Replace this command with the one to update your MD file
+          echo "$(date)" > README.md
+        # Commit and push the changes
+        git config user.name "2010johnlee"
+        git config user.email "2010johnlee@gmail.com"
+        git commit -am "Auto-update MD file"
+        git push
