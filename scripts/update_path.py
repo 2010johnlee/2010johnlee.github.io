@@ -32,16 +32,16 @@ def main():
     folder_id = '1G5b2qzGc3kL5dWTAr1RkrL5nFA3UO7RF'
 
     files = list_files_in_folder(folder_id)
-    
-if not files:
-    print(f'File "{file_path}" not found on Google Drive.')
-else:
-    # Get the web view link (URL) of the file
-    file_url = files[0]['webViewLink']
+    #print(files)
+    if not files:
+        print(f'File "{file_path}" not found on Google Drive.')
+    else:
+        # Get the web view link (URL) of the file
+        file_url = files[0]['id']
 
-    # Write the URL to a Markdown file
-    with open('README.md', 'w') as md_file:
-        md_file.write(f'[Link Text]({file_url})')
+        # Write the URL to a Markdown file
+        with open('README.md', 'w') as md_file:
+            md_file.write(f'https://drive.google.com/drive/folders/{file_url}')
 
 if __name__ == '__main__':
     main()
