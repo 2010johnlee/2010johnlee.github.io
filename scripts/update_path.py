@@ -2,7 +2,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 # Replace 'your-credentials.json' with the path to your Google Cloud credentials JSON file
-credentials_file = 'your-credentials.json'
+credentials_file = 'credentials.json'
 file_path = '/path/to/your/file/on/google/drive/filename.ext'
 
 # Load credentials from the JSON file
