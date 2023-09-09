@@ -23,6 +23,6 @@ jobs:
       - name: Run Python Script
         run: |
           echo "$GOOGLE_DRIVE_CREDENTIALS" > credentials.json
-          python check_drive_file.py
+          python update_path.py
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
