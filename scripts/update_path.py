@@ -40,7 +40,7 @@ else:
     file_url = files[0]['webViewLink']
 
     # Write the URL to a Markdown file
-    with open('output.md', 'w') as md_file:
+    with open('README.md', 'w') as md_file:
         md_file.write(f'[Link Text]({file_url})')
 
 if __name__ == '__main__':
