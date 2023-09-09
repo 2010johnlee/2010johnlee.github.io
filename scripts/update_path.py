@@ -17,7 +17,8 @@ def list_files_in_folder(folder_id):
     try:
         results = drive_service.files().list(
             q=f"'{folder_id}' in parents",
-            fields="nextPageToken, files(id, name)"
+            fields="nextPageToken, files(id, name)",
+            orderBy="createdTime desc"
         ).execute()
 
         files = results.get('files', [])
@@ -37,7 +38,8 @@ def main():
         print(f'File "{file_path}" not found on Google Drive.')
     else:
         # Get the web view link (URL) of the file
-        file_url = files[1]['id']
+        file_url = files[0]['id']
+        print(files[0]['id'])
         print(f'https://drive.google.com/file/d/{file_url}')
 	
         # Write the URL to a Markdown file
