@@ -37,11 +37,12 @@ def main():
         print(f'File "{file_path}" not found on Google Drive.')
     else:
         # Get the web view link (URL) of the file
-        file_url = files[0]['id']
-
+        file_url = files[1]['id']
+        print(f'https://drive.google.com/file/d/{file_url}')
+	
         # Write the URL to a Markdown file
         with open('README.md', 'w') as md_file:
-            md_file.write(f'https://drive.google.com/drive/folders/{file_url}')
+            md_file.write(f'https://drive.google.com/file/d/{file_url}')
 
 if __name__ == '__main__':
     main()
