@@ -33,7 +33,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          echo "$(date)" >> README.md
+          echo -e "\n$(date)" >> README.md
           git config user.name "2010johnlee"
           git config user.email "2010johnlee@gmail.com"
           git commit -am "README.md"
