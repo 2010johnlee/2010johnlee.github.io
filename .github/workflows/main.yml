@@ -30,3 +30,10 @@ jobs:
           python scripts/update_path.py
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "2010johnlee"
+          git config user.email "2010johnlee@gmail.com"
+          git commit -am "README.md"
+          git push
