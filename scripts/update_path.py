@@ -39,7 +39,7 @@ def main():
     else:
         # Get the web view link (URL) of the file
         file_url = files[0]['id']
-	file_name = files[0]['name']
+        file_name = files[0]['name']
         print(files[0]['id'])
         print(f'https://drive.google.com/file/d/{file_url}')
 	
