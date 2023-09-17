@@ -30,7 +30,7 @@ def list_files_in_folder(folder_id):
 
 def main():
     # Replace with the ID of the folder you want to list files from.
-    folder_id = '1G5b2qzGc3kL5dWTAr1RkrL5nFA3UO7RF'
+    folder_id = '1gAIUwRH-k3_VaHd8e5KFY4s704lRJGNc'
 
     files = list_files_in_folder(folder_id)
     #print(files)
