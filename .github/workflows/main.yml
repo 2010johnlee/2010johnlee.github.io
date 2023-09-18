@@ -32,9 +32,20 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
 
       - name: Commit and Push Changes
-        run: |
-          echo " <br />$(date)" >> README.md
+        run: | #python creates README_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
+          if ! cmp -s README_temp.md README.md; then
+            env TZ=PDT date >> log.md
+            echo "File updated. <br />" >> log.md
+            mv README_temp.md README.md
+            git config user.name "2010johnlee"
+            git config user.email "2010johnlee@gmail.com"
+            git commit -am "README.md"
+            git push
+          else
+            env TZ=PDT date >> log.md
+            echo "File not updated. <br />" >> log.md
+          fi
           git config user.name "2010johnlee"
           git config user.email "2010johnlee@gmail.com"
-          git commit -am "README.md"
+          git commit -am "log.md"
           git push
