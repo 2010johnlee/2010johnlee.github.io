@@ -36,15 +36,15 @@ jobs:
           date_path=$(python scripts/check_time.py)
           
       - name: Commit and Push Changes
-        run: | #python creates README_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
+        run: | #python creates temp_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
           if ! cmp -s temp_temp.md temp.md; then
             env TZ=PDT date >> log.md
             echo "File updated. <br />" >> log.md
-            mv README_temp.md README.md
-            echo ", $date_path" >> README.md
+            mv temp_temp.md temp.md
+            echo ", $date_path" >> temp.md
             git config user.name "2010johnlee"
             git config user.email "2010johnlee@gmail.com"
-            git commit -am "README.md"
+            git commit -am "temp.md"
             git push
           else
             env TZ=PDT date >> log.md
