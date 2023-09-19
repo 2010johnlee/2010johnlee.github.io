@@ -19,8 +19,6 @@ if current_hour >= 12:
     load_date = next_day_date
 else:
     load_date = current_day_date
-    
-print(load_date)
 
 # Load the lookup table (replace 'lookup_table.csv' with the actual file path)
 lookup_table = pd.read_csv('lookup_table.csv', dtype={'item1': str})
