@@ -22,21 +22,26 @@ jobs:
           
       - name: Install Dependencies
         run: |
-          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client pandas
 
-      - name: Run Python Script
+      - name: Run Python Script to check file
         run: |
           echo "$GOOGLE_DRIVE_CREDENTIALS" > credentials.json
           python scripts/update_path.py
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
-
+          
+      - name: Run Python Script to check date
+        run: |
+          date_path=$(python scripts/check_time.py)
+          
       - name: Commit and Push Changes
         run: | #python creates README_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
           if ! cmp -s README_temp.md README.md; then
             env TZ=PDT date >> log.md
             echo "File updated. <br />" >> log.md
             mv README_temp.md README.md
+            echo ", $date_path" >> README.md
             git config user.name "2010johnlee"
             git config user.email "2010johnlee@gmail.com"
             git commit -am "README.md"
