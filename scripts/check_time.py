@@ -38,9 +38,9 @@ filtered_row = lookup_table[lookup_table[date_column] == load_date]
 if not filtered_row.empty:
     item1 = filtered_row.iloc[0]['item1']  # Assuming 'item1' is the name of the item 1 column
     item2 = filtered_row.iloc[0]['item2']  # Assuming 'item2' is the name of the item 2 column
-    print(f"For date {load_date}, Item 1 is: {item1}, Item 2 is: {item2}")
+    print(f"sharing/2022/wk{item1}/{load_date}-bin")
 else:
-    print(f"No data found for date: {load_date}")
+    print(f"temp")
     
 #create path to update: eccseattle.github.io/media/sharing/2022/wk090/2023-09-18-bin.m4a
 #create path to update: bibleplan.github.io/_posts/sharing/2022/wk090/2023-09-18-bin.md
