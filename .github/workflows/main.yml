@@ -41,7 +41,7 @@ jobs:
             env TZ=PDT date >> log.md
             echo "File updated. <br />" >> log.md
             mv temp_temp.md temp.md
-            echo ", $date_path" >> temp.md
+            echo ",$date_path" >> temp.md
             git config user.name "2010johnlee"
             git config user.email "2010johnlee@gmail.com"
             git commit -am "temp.md"
