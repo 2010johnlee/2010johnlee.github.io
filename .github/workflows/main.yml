@@ -37,7 +37,7 @@ jobs:
           
       - name: Commit and Push Changes
         run: | #python creates README_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
-          if ! cmp -s README_temp.md README.md; then
+          if ! cmp -s temp_temp.md temp.md; then
             env TZ=PDT date >> log.md
             echo "File updated. <br />" >> log.md
             mv README_temp.md README.md
