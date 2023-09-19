@@ -45,7 +45,7 @@ def main():
 	
         # Write the URL to a Markdown file
         with open('temp_temp.md', 'w') as md_file:
-            md_file.write(f'{file_name}, https://drive.google.com/uc?export=download&id={file_url}') 
+            md_file.write(f'{file_name},https://drive.google.com/uc?export=download&id={file_url}') 
 		
 	# wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=FILE_ID' -O output_file_name
 
