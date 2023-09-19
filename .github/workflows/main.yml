@@ -33,7 +33,7 @@ jobs:
           
       - name: Run Python Script to check date
         run: |
-          date_path=$(python scripts/check_time.py)
+          python scripts/check_time.py >> temp_temp.md
           
       - name: Commit and Push Changes
         run: | #python creates temp_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
@@ -41,7 +41,6 @@ jobs:
             env TZ=PDT date >> log.md
             echo "File updated. <br />" >> log.md
             mv temp_temp.md temp.md
-            echo ",$date_path" >> temp.md
             git config user.name "2010johnlee"
             git config user.email "2010johnlee@gmail.com"
             git commit -am "temp.md"
