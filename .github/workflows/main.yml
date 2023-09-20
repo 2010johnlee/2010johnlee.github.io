@@ -31,11 +31,6 @@ jobs:
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
           
-      - name: Run Python Script to check date
-        run: |
-          date_output=$(python scripts/check_time.py) 
-          echo ",$date_output" >> temp_temp.md
-          
       - name: Commit and Push Changes
         run: | #python creates temp_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
           if ! cmp -s temp_temp.md temp.md; then
