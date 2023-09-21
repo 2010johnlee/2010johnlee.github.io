@@ -44,14 +44,6 @@ jobs:
             git add log.md  # Stage the changes
             git commit -m "Update log.md"  # Use -m to provide a commit message
             git push            
-          else
-            TZ="America/Los_Angeles" date >> log.md
-            echo "File not updated. <br />" >> log.md
-            git config user.name "2010johnlee"
-            git config user.email "2010johnlee@gmail.com"
-            git add log.md  # Stage the changes
-            git commit -m "Update log.md"  # Use -m to provide a commit message
-            git push
           fi
 
 
