@@ -17,6 +17,9 @@ def list_files_in_folder(folder_id):
     try:
         results = drive_service.files().list(
             q=f"'{folder_id}' in parents",
+            includeItemsFromAllDrives=True, 
+            supportsAllDrives=True, 
+            corpora="allDrives", 
             fields="nextPageToken, files(id, name)",
             orderBy="createdTime desc"
         ).execute()
