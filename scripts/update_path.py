@@ -35,7 +35,7 @@ def main():
     files = list_files_in_folder(folder_id)
     #print(files)
     if not files:
-        print(f'Can't load any file in folder "{folder_id}".')
+        print(f'Can't load any file in folder "{folder_id}" ')
     else:
         # Get the web view link (URL) of the file
         file_url = files[0]['id']
