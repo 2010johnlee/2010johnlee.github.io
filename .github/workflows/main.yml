@@ -2,7 +2,7 @@ name: Check Google Drive File
 
 on:
   schedule:
-    - cron: '*/6 * * * *'  # Runs every hour on the hour
+    - cron: '*/15 * * * *'  # Runs every hour on the hour
 
 jobs:
   check_drive_file:
