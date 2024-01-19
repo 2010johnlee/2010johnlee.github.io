@@ -43,12 +43,15 @@ def main():
         # Get the web view link (URL) of the file
         file_url = files[0]['id']
         file_name = files[0]['name']
+	modified_time = files[0]['modifiedTime']
+	    
         print(files[0]['id'])
         print(f'https://drive.google.com/file/d/{file_url}')
-	
+	print(f'Modified Time: {modified_time}')
+	    
         # Write the URL to a Markdown file
         with open('temp_temp.md', 'w') as md_file:
-            md_file.write(f'{file_name},https://drive.google.com/u/0/uc?id={file_url}&export=download') 
+            md_file.write(f'{file_name},https://drive.google.com/u/0/uc?id={file_url}&export=download,{modified_time}') 
 		
 	# wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=FILE_ID' -O output_file_name
 
