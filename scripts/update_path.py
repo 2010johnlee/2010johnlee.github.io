@@ -20,7 +20,7 @@ def list_files_in_folder(folder_id):
             includeItemsFromAllDrives=True, 
             supportsAllDrives=True, 
             corpora="allDrives", 
-            fields="nextPageToken, files(id, name)",
+            fields="nextPageToken, files(id, name, modifiedTime)",
             orderBy="createdTime desc"
         ).execute()
 
