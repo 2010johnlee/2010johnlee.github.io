@@ -41,7 +41,7 @@ jobs:
               git config user.name "2010johnlee"
               git config user.email "2010johnlee@gmail.com"
               git add -A
-              git commit -m "Add untracked files"
+              git commit -m "Add untracked and modified files"
               git push            
             fi
           else
