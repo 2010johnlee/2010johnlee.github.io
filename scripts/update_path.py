@@ -21,7 +21,7 @@ def list_files_in_folder(folder_id):
             supportsAllDrives=True, 
             corpora="allDrives", 
             fields="nextPageToken, files(id, name, modifiedTime)",
-            orderBy="createdTime desc"
+            orderBy="modifiedTime desc"
         ).execute()
 
         files = results.get('files', [])
