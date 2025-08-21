@@ -34,10 +34,10 @@ jobs:
       - name: Commit and Push Changes
         run: | #python creates temp_temp, if it is different, then update; if not, then do nothing. log activity in log.md.
           rm credentials.json
-          if [ -e temp_temp.md ]; then
-            if ! cmp -s temp_temp.md temp.md; then
-              TZ="America/Los_Angeles" date >> log.md
-              echo "File updated. <br />" >> log.md
+          if [ -e temp_temp2.md ]; then
+            if ! cmp -s temp_temp2.md temp2.md; then
+              TZ="America/Los_Angeles" date >> log2.md
+              echo "File updated. <br />" >> log2.md
               mv temp_temp2.md temp2.md
               git config user.name "2010johnlee"
               git config user.email "2010johnlee@gmail.com"
@@ -46,5 +46,5 @@ jobs:
               git push            
             fi
           else
-            echo "File temp_temp.md does not exist"
+            echo "File temp_temp2.md does not exist"
           fi
