@@ -18,11 +18,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Replace '3.x' with your desired Python version
+          python-version: '3.11'  # Replace '3.x' with your desired Python version
           
       - name: Install Dependencies
         run: |
-          pip install packaging
           pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client pandas
 
       - name: Run Python Script to check file
