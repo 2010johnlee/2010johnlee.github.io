@@ -2,8 +2,8 @@ name: Check Google Drive File2
 
 on:
   schedule:
-    - cron: '0/20 * * * *'  # Runs every hour on the hour
-
+    #- cron: '*/20 * * * *' # Runs every hour on the hour, to disable, change to 1 1 *
+    - cron: '0 0 1 12 *'
 jobs:
   check_drive_file:
     runs-on: ubuntu-22.04
