@@ -1,1 +1,1 @@
-week27.srt,https://drive.google.com/u/0/uc?id=1n_kmQyCTJOUxIBe-gNRCnUNFUyyPD3Q2&export=download,2026-06-22T21:25:24.000Z
+week27.txt,https://drive.google.com/u/0/uc?id=1n_kmQyCTJOUxIBe-gNRCnUNFUyyPD3Q2&export=download,2026-06-23T02:42:19.931Z
